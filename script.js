@@ -55,6 +55,8 @@ if (loginForm) {
 
       setTimeout(() => {
         loginBtn.disabled = false;
+        document.activeElement?.blur();
+        window.scrollTo(0, 0);
         goToIntro();
       }, 650);
 
@@ -544,4 +546,5 @@ window.addEventListener("resize", () => {
     card.style.left = `${clamp(left, 0, maxX)}px`;
     card.style.top = `${clamp(top, 0, maxY)}px`;
   });
+
 });
