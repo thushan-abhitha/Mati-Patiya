@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mati Patiyooo💘</title>
+
+  <!-- Favicon + App Icons -->
+  <link rel="icon" type="image/png" href="public/happy_cat.png" />
+  <link rel="apple-touch-icon" href="public/happy_cat.png" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <meta name="theme-color" content="#ff2f7d" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Ambient animated background -->
+  <div class="bg">
+    <div class="glow g1"></div>
+    <div class="glow g2"></div>
+    <div class="glow g3"></div>
+    <div class="sparkles" aria-hidden="true"></div>
+  </div>
+
+  <!-- Confetti canvas (only used on YES) -->
+  <canvas id="confetti" class="confetti" aria-hidden="true"></canvas>
+
+  <main class="app" role="main">
+
+    <!-- ✅ LOGIN SCREEN (NEW) -->
+    <section id="screen-login" class="screen active" aria-label="Login">
+      <div class="loginWrap">
+        <div class="loginCard">
+          <div class="loginMedia">
+            <img src="public/login.jpg" alt="Login background" class="loginImg" />
+            <div class="loginHearts" aria-hidden="true">
+              <span>💗</span><span>💘</span><span>💖</span><span>💞</span><span>💝</span><span>💓</span>
+            </div>
+            <div class="loginGlow" aria-hidden="true"></div>
+            <div class="loginStamp">🔒 Private Romance Zone</div>
+          </div>
+
+          <div class="loginFormSide">
+            <div class="loginTitleRow">
+              <div class="loginBadge">💌</div>
+              <div>
+                <h2 class="loginTitle">Access Required, Mage Babooo 😌</h2>
+                <p class="loginSubtitle">This Area is Reserved for One Special Girl Only.</p>
+              </div>
+            </div>
+
+            <form id="loginForm" class="loginForm" autocomplete="off">
+              <label class="field">
+                <span class="labelText">Username</span>
+                <input id="loginUser" class="input" type="text" placeholder="Our exclusive title here…" required />
+              </label>
+
+              <label class="field">
+                <span class="labelText">Password</span>
+                <input id="loginPass" class="input" type="password" placeholder="Password (It’s our thing 😏)" required />
+              </label>
+
+              <button id="loginBtn" class="btn primary big" type="submit">
+                Unlock 💗
+                <span class="btnshine" aria-hidden="true"></span>
+              </button>
+
+              <p id="loginError" class="loginError" aria-live="polite"></p>
+
+              <div class="loginHint">
+                Hint: Stop overthinking 😏
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Intro -->
+    <section id="screen-intro" class="screen" aria-label="Intro">
+      <div class="card hero">
+        <div class="badge">💗Legally Required to Love This😏 Okiiii My Little Lawyer😘</div>
+
+        <h1 class="typewrap">
+          <span id="typeText" class="typeText" aria-live="polite"></span>
+          <span class="caret" aria-hidden="true"></span>
+        </h1>
+
+        <p class="sub">
+          Silly? Yes. Effective? Also Yes. 😌
+        </p>
+
+        <button id="introContinue" class="btn primary" disabled>
+          Continue
+          <span class="btnshine" aria-hidden="true"></span>
+        </button>
+
+        <div class="hint">Made with Love by Your Forever Valentine; Abhiii😁</div>
+      </div>
+    </section>
+
+    <!-- Question -->
+    <section id="screen-question" class="screen" aria-label="Valentine question">
+      <div class="card">
+        <div class="topline">
+          <span class="chip">💌 Relationship Interview</span>
+          <span class="meter" id="noMeter" aria-label="No attempts meter"></span>
+        </div>
+
+        <h2 class="title">So… Will You Be My Valentine?</h2>
+        <p class="caption">Choose wisely… the “No” button is kinda dramatic 😤</p>
+
+        <div class="btnrow">
+          <button id="yesBtn" class="btn primary big">
+            Fine, Yes 😏
+            <span class="btnshine" aria-hidden="true"></span>
+          </button>
+
+          <div class="noZone" id="noZone" aria-label="No button area">
+            <button id="noBtn" class="btn danger big" type="button">
+              Nope 🙄
+            </button>
+          </div>
+        </div>
+
+        <p class="micro" id="noTaunt" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <!-- Success -->
+    <section id="screen-success" class="screen" aria-label="Success messages">
+      <div class="card wide successCard">
+        <!-- decorative particles overlay -->
+        <div class="successOverlay" aria-hidden="true"></div>
+
+        <div class="ribbon">💞 Ummmmma Mage Good Baba 💞</div>
+
+        <!-- Happy cat -->
+        <div class="happyCatRow" aria-hidden="true">
+          <div class="happyCatGlow"></div>
+          <img
+            class="happyCat"
+            src="public/happy_cat.png"
+            alt="Happy cat"
+            loading="eager"
+          />
+          <div class="heartHalo" aria-hidden="true"></div>
+        </div>
+
+        <h2 class="title successTitle"> Decision secured. 🔒❤️</h2>
+        <p class="caption successCaption">
+          Smart. Beautiful. Excellent taste. That’s my girl.✨
+        </p>
+
+        <!-- 3 floating cards, placed in different spots (not aligned) -->
+        <div class="floatingBoard" id="floatingBoard">
+          <article class="floatCard c1" tabindex="0">
+            <div class="floatIcon">🌹</div>
+            <h3 class="floatTitle">Valentine Greetings</h3>
+            <p class="floatPara">
+              Happy Valentine’s Day Ieshiii Babooo. <br>
+              You didn’t just press “Yes.” <br>
+              You officially signed up for my love, my chaos, my random affection attacks, and unlimited forehead kisses. <br>
+              But no lip kisses😭 (Yet😏)
+            </p>
+            <div class="floatSpark" aria-hidden="true"></div>
+          </article>
+
+          <article class="floatCard c2" tabindex="0">
+            <div class="floatIcon">🙈</div>
+            <h3 class="floatTitle">Abhiii's Message</h3>
+            <p class="floatPara">
+              Happy Valentine's Day Mage Baboooo💞😍😘❤️ <br>
+              From the moment you became a part of my life, everything started to feel right, more beautiful, brighter, and full of meaning. You are truly the best thing that has ever happened to me, and I will always be grateful for that patiyoo🥺❤️ <br>
+              You make me feel special. You make me feel blessed. And you always push me to become the best possible version of myself🥰❤️ You have always stayed by my side, not only in the happy moments, but especially in the sad ones🥺❤️ <br>
+              We both know that I’m going through a rough time right now, but you never changed a single thing about us. You treat me with the same love, the same care, the same respect and you continue to push me forward so I can get through this and reach a brighter future. I will always be thankful for that mage babooo😘❤️ <br>
+              I love you so much mage panchoo🙈❤️ You are my soulmate😍 You are the captain of my small boat😌 and I know for sure one day we will grow it into something bigger together. I promise you that I will be with you today, tomorrow, and forever until I die mage patiyooo💞😍🙈❤️ <br>
+              I love you sooo much mage Ieshiii Babooo and I wish you a happy valentine's day my baby girl🙈🥰😘💕 <br>
+              Adareiiiiiii😘❤️
+            </p>
+            <div class="floatSpark" aria-hidden="true"></div>
+          </article>
+
+          <article class="floatCard c3" tabindex="0">
+            <div class="floatIcon">💌</div>
+            <h3 class="floatTitle">ChatGPT Version</h3>
+            <p class="floatPara">
+              Happy Valentine’s Day, Ieshiii 🤍 <br>
+              I don’t think I say this enough, but I’m really grateful for you. You have this quiet way of making everything feel better, calmer, brighter, easier. Just knowing you’re there makes my days feel a little lighter. <br>
+              Thank you for your patience, your kindness, your little laughs, and the way you care and treat. Being with you feels safe and real, and that means more to me than I can properly put into words. <br>
+              Today is just a reminder of how lucky I feel to have you. I hope you always know how special you are to me. 💗 <br>
+              I love You Baboooo😘❤️
+            </p>
+            <div class="floatSpark" aria-hidden="true"></div>
+          </article>
+
+          <!-- extra floating hearts (visual only) -->
+          <div class="miniHearts" aria-hidden="true">
+            <span>💗</span><span>💖</span><span>💘</span><span>💞</span><span>💓</span><span>💝</span>
+          </div>
+        </div>
+
+        <div class="actions successActions">
+          <button id="restartBtn" class="btn ghost">
+            Try me again 😏
+          </button>
+          <button id="exitBtn" class="btn soft">
+            Cover Me in Hearts 💕
+          </button>
+        </div>
+
+        <p class="exitNote" id="exitNote" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <!-- Angry Cat Modal -->
+    <div id="catModal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+      <div class="modalCard">
+        <button id="catClose" class="x" aria-label="Close">✕</button>
+        <h3 class="modalTitle">YOU HAVE AWAKENED THE ANGRY CAT 😾</h3>
+        <ul>
+            <li><p class="modalText">Section 14.02: Three “No”s are Strictly Prohibited in Our Relationship.</p></li>
+            <li><p class="modalText">This relationship operates under Yes-based governance.</p></li>
+            <li><p class="modalText">Clause 3: Excessive “No” usage voids privileges.</p></li>
+        </ul>
+        <div class="catWrap" aria-hidden="true">
+          <div class="catFrame">
+            <img id="angryCatImg" class="catImg" src="" alt="Angry cat" />
+          </div>
+        </div>
+
+        <button id="catOk" class="btn primary">
+          Okay okay, relax 😭
+          <span class="btnshine" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

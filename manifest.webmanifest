@@ -1,0 +1,15 @@
+{
+  "name": "For Ieshiii",
+  "short_name": "Ieshiii 💘",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#ffd1e3",
+  "theme_color": "#ff2f7d",
+  "icons": [
+    {
+      "src": "public/happy_cat.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
